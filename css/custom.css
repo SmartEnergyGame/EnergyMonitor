@@ -1,3 +1,8 @@
+#container {
+	margin-left: 380px;
+}
+
+
 .sidenav-left {
     height: 100%;
     width: 280px;
@@ -55,8 +60,8 @@
 }
 
 .main-tittle {
-    margin-left: 300px;
-    margin-top: 150px;
+    margin-left: 380px;
+    margin-top: 200px;
     color:black;
     font-weight: bold;
     font-size: 25px;
