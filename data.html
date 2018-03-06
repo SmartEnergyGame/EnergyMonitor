@@ -11,7 +11,9 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/custom.js"></script>
+   
     <script src="https://cdn.rawgit.com/xdanielsb/Energy/3ba0916d/base/b3/code_radial%24.js"></script>
     <style>
         .btn-link, a:hover, a:visited, a:link, a:active{
@@ -78,21 +80,23 @@
           </center>
           <div id="chart"></div>
 
-          <div class="range">
-              <input type="range" min="1" max="7" steps="1" value="1">
-            </div>
-            
-            <ul class="range-labels">
-              <li class="active selected">Today</li>
-              <li>2 days</li>
-              <li>3 days</li>
-              <li>4 days</li>
-              <li>5 days</li>
-              <li>6 days</li>
-              <li>7 days</li>
-            </ul>
+          
 
     </div>
+
+    <div class="range">
+        <input type="range" min="1" max="7" steps="1" value="1">
+      </div>
+      
+      <ul class="range-labels">
+        <li class="active selected">Today</li>
+        <li>2 days</li>
+        <li>3 days</li>
+        <li>4 days</li>
+        <li>5 days</li>
+        <li>6 days</li>
+        <li>7 days</li>
+      </ul>
     <script>
         /* way one */
     
@@ -127,5 +131,6 @@
         let myHouse = 10
         bh.plot("chart", myHouse, false);
       </script>
+       <script src="js/slider.js"></script>
   </body>
 </html>
