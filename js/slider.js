@@ -1,3 +1,4 @@
+'use strict'
 var sheet = document.createElement('style'),  
   $rangeInput = $('.range input'),
   prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
@@ -5,24 +6,10 @@ var sheet = document.createElement('style'),
 document.body.appendChild(sheet);
 
 var getTrackStyle = function (el) {  
-  var curVal = el.value,
-      val = (curVal - 1) * 5.666666667,
-      style = '';
-  
-  // Set active label
   $('.range-labels li').removeClass('active selected');
-  
-  var curLabel = $('.range-labels').find('li:nth-child(' + curVal + ')');
-  
+  var curLabel = $('.range-labels').find('li:nth-child(' + el.value + ')');
   curLabel.addClass('active selected');
   curLabel.prevAll().addClass('selected');
-  
-  // Change background gradient
-  for (var i = 0; i < prefs.length; i++) {
-    // style += '.range {background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #fff ' + val + '%, #fff 100%)}';
-    // style += '.range input::-' + prefs[i] + '{background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #b2b2b2 ' + val + '%, #b2b2b2 100%)}';
-  }
-
   return style;
 }
 
