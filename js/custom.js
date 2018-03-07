@@ -14,7 +14,7 @@
  }
 
  function displayRightMenu(){
-  document.getElementById("sidenav-right").style.width = "280px";
+  document.getElementById("sidenav-right").style.width = "260px";
   document.getElementById("bell1").style.display = "none";
  }
 
