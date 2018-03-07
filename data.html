@@ -13,20 +13,19 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/custom.js"></script>
-   
     <script src="https://cdn.rawgit.com/xdanielsb/Energy/3ba0916d/base/b3/code_radial%24.js"></script>
     <style>
-        .btn-link, a:hover, a:visited, a:link, a:active{
-            color: black;
-            text-decoration: none;
-            text-decoration-color: transparent;
-        }
-      </style>
+      .btn-link, a:hover, a:visited, a:link, a:active{
+      color: black;
+      text-decoration: none;
+      text-decoration-color: transparent;
+      }
+    </style>
   </head>
   <body>
     <div class="sidenav-left">
       <center>
-         <a href="calendar.html" style="border-color:transparent" > <img src="img/weather.png" alt="" class="img-logo">   </a>
+        <a href="calendar.html" style="border-color:transparent" > <img src="img/weather.png" alt="" class="img-logo">   </a>
         <br><br>
         <div class="btn-link" style="background-color: #F1F1F1;">
           <a href="index.html">Home</a>
@@ -42,7 +41,6 @@
         </div>
       </center>
     </div>
-
     <div class="sidenav-right" id="sidenav-right" style=" margin-top:-20px;">
       <div class="wrapper2">
         <div class="header-right-menu">
@@ -50,92 +48,93 @@
           <span class="glyphicon glyphicon-bell bell" onclick="hideRightMenu()"></span>
         </div>
         <div class="content-right-menu">
-            <div class="item-content" style="background-color: yellow;">
-              <div class="item-right-menu">
-                <b >21</b><p style="display:inline"> MARCH: </p>  <p style="color:red;display:inline">Your community is doing better than last month, but still on track to exceed the monthly goal.</p>
-              </div>
-            </div>
+          <div class="item-content" style="background-color: yellow;">
             <div class="item-right-menu">
-              <p style="display:inline"> FEBRUARY: </p>  <p style="color:green;display:inline">Your community met the monthly goal.</p>
+              <b >21</b>
+              <p style="display:inline"> MARCH: </p>
+              <p style="color:red;display:inline">Your community is doing better than last month, but still on track to exceed the monthly goal.</p>
             </div>
+          </div>
+          <div class="item-right-menu">
+            <p style="display:inline"> FEBRUARY: </p>
+            <p style="color:green;display:inline">Your community met the monthly goal.</p>
+          </div>
+          <div class="item-right-menu">
+            <p style="display:inline"> JANUARY: </p>
+            <p style="color:green;display:inline">Your community met the monthly goal.</p>
+          </div>
+          <div class="item-content" style="background-color: #f4d5d5;">
             <div class="item-right-menu">
-                <p style="display:inline"> JANUARY: </p>  <p style="color:green;display:inline">Your community met the monthly goal.</p>
+              <p style="display:inline"> DECEMBER: </p>
+              <p style="color:green;display:inline">Your community met the monthly goal.</p>
             </div>
-            <div class="item-content" style="background-color: #f4d5d5;">
-              <div class="item-right-menu">
-                <p style="display:inline"> DECEMBER: </p>  <p style="color:green;display:inline">Your community met the monthly goal.</p>
-            </div>
-            </div>
-            <div class="item-right-menu">
-              <p style="display:inline"> NOVEMBER: </p>  <p style="color:green;display:inline">Your community met the monthly goal.</p>
-            </div>
+          </div>
+          <div class="item-right-menu">
+            <p style="display:inline"> NOVEMBER: </p>
+            <p style="color:green;display:inline">Your community met the monthly goal.</p>
+          </div>
         </div>
       </div>
     </div>
     <h1>Hello</h1>
     <span id="bell1" class="glyphicon glyphicon-bell bell" onclick="displayRightMenu()" style="float:right; margin-top:-55px;"></span>
     <div class="container" style="margin-top:-70px;">
-        <center>
-            <h2 class="tittle">Last month's energy usage per household</h2>
-          </center>
-          <div id="chart"></div>
-
-          
-
+      <center>
+        <h2 class="tittle">Last month's energy usage per household</h2>
+      </center>
+      <div id="chart"></div>
     </div>
-
     <div class="range">
-        <input type="range" min="1" max="12" steps="1" value="12">
-      </div>
-      
-      <ul class="range-labels">
-          <li>APR</li>
-          <li>MAY</li>
-          <li>JUN</li>
-          <li>JUL</li>
-          <li>AUG</li>
-          <li>SEP</li>
-          <li>OCT</li>
-          <li>NOV</li>
-          <li>DEV</li>
-          <li>JAN</li>
-          <li>FEB</li>
-          <li class="active selected">MAR</li>
-      </ul>
+      <input type="range" min="1" max="12" steps="1" value="12">
+    </div>
+    <ul class="range-labels">
+      <li>APR</li>
+      <li>MAY</li>
+      <li>JUN</li>
+      <li>JUL</li>
+      <li>AUG</li>
+      <li>SEP</li>
+      <li>OCT</li>
+      <li>NOV</li>
+      <li>DEV</li>
+      <li>JAN</li>
+      <li>FEB</li>
+      <li class="active selected">MAR</li>
+    </ul>
     <script>
-        /* way one */
-    
-        /*Way two*/
-        let data  = [
-          {name:"House1",y:600},
-          {name:"House2",y:750},
-          {name:"House3",y:800},
-          {name:"House4",y:900},
-          {name:"House5",y:1000},
-          {name:"House6",y:900},
-          {name:"House7",y:700},
-          {name:"House8",y:900},
-          {name:"House9",y:800},
-          {name:"House10",y:1000},
-          {name:"House11",y:700},
-          {name:"House12",y:600},
-          {name:"House1",y:600},
-          {name:"House2",y:750},
-          {name:"House3",y:800},
-          {name:"House4",y:900},
-          {name:"House5",y:1000},
-          {name:"House6",y:900},
-          {name:"House7",y:700},
-          {name:"House8",y:900},
-          {name:"House9",y:800},
-          {name:"House10",y:1000},
-          {name:"House11",y:700},
-          {name:"House12",y:600}
-        ]
-        let bh = new Radial(data)
-        let myHouse = 10
-        bh.plot("chart", myHouse, false);
-      </script>
-       <script src="js/slider.js"></script>
+      /* way one */
+      
+      /*Way two*/
+      let data  = [
+        {name:"House1",y:600},
+        {name:"House2",y:750},
+        {name:"House3",y:800},
+        {name:"House4",y:900},
+        {name:"House5",y:1000},
+        {name:"House6",y:900},
+        {name:"House7",y:700},
+        {name:"House8",y:900},
+        {name:"House9",y:800},
+        {name:"House10",y:1000},
+        {name:"House11",y:700},
+        {name:"House12",y:600},
+        {name:"House1",y:600},
+        {name:"House2",y:750},
+        {name:"House3",y:800},
+        {name:"House4",y:900},
+        {name:"House5",y:1000},
+        {name:"House6",y:900},
+        {name:"House7",y:700},
+        {name:"House8",y:900},
+        {name:"House9",y:800},
+        {name:"House10",y:1000},
+        {name:"House11",y:700},
+        {name:"House12",y:600}
+      ]
+      let bh = new Radial(data)
+      let myHouse = 10
+      bh.plot("chart", myHouse, false);
+    </script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
