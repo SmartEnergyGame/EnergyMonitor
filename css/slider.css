@@ -3,8 +3,8 @@
   position: relative;
   width: 660px;
   height: 5px;
-  margin-left: 400px;
-  margin-top: -300px;
+  margin-left: 350px;
+  margin-top: -440px;
 }
 
 .range input {
@@ -78,7 +78,7 @@
   margin: 18px -41px 0;
   padding: 0;
   list-style: none;
-  margin-left: 400px;
+  margin-left: 350px;
 }
 .range-labels li {
   position: relative;
