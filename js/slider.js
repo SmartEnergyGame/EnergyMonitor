@@ -21,6 +21,7 @@ $('.range-labels li').on('click', function () {
   var index = $(this).index();
   $rangeInput.val(index + 1).trigger('input');
 
+  //alert(index)
   elements = []
 
   let data = []
