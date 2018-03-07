@@ -1,4 +1,19 @@
 'use strict'
+
+
+let allData = []
+for (let i=1; i<=11; i++){
+  let data2 = []
+  /*Way two*/
+  for(let i=1; i<=10; i++){
+    let rnum = parseInt(Math.floor(Math.random() * 1400) + 100)
+    data2.push({name:"House"+i,y:rnum})
+  }
+  allData.push(data2)
+}
+allData.push(data)
+
+
 var sheet = document.createElement('style'),  
   $rangeInput = $('.range input'),
   prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
@@ -16,6 +31,8 @@ $rangeInput.on('input', function () {
   getTrackStyle(this);
 });
 
+
+
 // Change input value on label click
 $('.range-labels li').on('click', function () {
   var index = $(this).index();
@@ -23,14 +40,7 @@ $('.range-labels li').on('click', function () {
 
   //alert(index)
   elements = []
-
-  let data = []
-  /*Way two*/
-  for(let i=1; i<=10; i++){
-    let rnum = parseInt(Math.floor(Math.random() * 1400) + 100)
-    data.push({name:"House"+i,y:rnum})
-  }
-  let bh = new Radial(data)
+  let bh = new Radial(allData[index])
   let myHouse = 10
   bh.plot("chart", myHouse, false);
 
