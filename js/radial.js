@@ -342,7 +342,7 @@ function paint(nameDiv){
   .attr("opacity", 1)
     
   let arrows = [0,1,2,3,4,5,6,7]
-  let arrowsy1 = [22, 22, 117, 117,230, 230, 200, 200]
+  let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
   let iarrows = isvg.selectAll("line")
     .data(arrows)
     .enter()
