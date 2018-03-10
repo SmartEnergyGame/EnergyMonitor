@@ -41,6 +41,11 @@ $('.range-labels li').on('click', function () {
   //alert(index)
   elements = []
   let bh = new Radial(allData[index])
+  if(index == 11 ){
+    animate = true
+  } else {
+    animate = false
+  }
   let myHouse = 10
   bh.plot("chart", myHouse, false);
 

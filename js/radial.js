@@ -25,6 +25,7 @@ let margin = {
  left: 360
 };
 let numBigCircles = 3;
+let animate = true
 
 /*
  @Constants for legends
@@ -232,115 +233,122 @@ function paint(nameDiv){
     .attr("cx", getX)
     .attr("cy", getY)
     .attr("r", getRadius)
-    .attr("opacity", 0) // ADV : All circles must be hidden at the start
+    .attr("opacity", function(d,i){
+      if(animate){
+        return "0"
+      }else{
+        return "1"
+      }
+    }) // ADV : All circles must be hidden at the start
     .attr("id", function(d, i){
       return "dot" + i
     })
     .style("fill", getColor)
 
 
-
-  let dots = isvg.selectAll("circle")
-
-   //moving all the dots 
-   dots.transition()
-   .delay(0)
-   .duration(0)
-   .attr("transform", function(d, i){
-     if(  i >= 3 ){
-       if( elements[i-numBigCircles] != undefined   ){
-         let _str=""
-         let val = 20
-         let x = elements[i-numBigCircles]["x"]
-         let y = elements[i-numBigCircles]["y"]
-         let distance = elements[i-numBigCircles]["real"]
-         let the = Math.atan2(y, x) * 180 / Math.PI;
-         if(the < 0 ) the += 360
-         if(distance > 700){
-           if(the <=90){
-             _str =   "translate("+val+", -"+val+")" // up right
-           }else if( the <= 180){
-             _str =   "translate(-"+val+", -"+val+")" // up left
-           }else if( the <= 270){
-             _str =   "translate(-"+val+", +"+val+")" // down left
-           }else {
-             _str =   "translate("+val+", "+val+")" //down - right
-           }
-         }else {
-           if(the <=90){
-             _str =   "translate(-"+val+", +"+val+")" // down left
-           }else if( the <= 180){
-             _str =   "translate("+val+", "+val+")" //down - right
-           }else if( the <= 270){
-             _str =   "translate("+val+", -"+val+")" // up right
-           }else {
-             _str =   "translate(-"+val+", -"+val+")" // up left
-           }
-         }
-         return _str
-         }
-         
-       }
-   })
-   .attr("opacity", function(d,i){
-     if(i <= 2 ) return "1"
-     return "0"
-   })
-
-
-  dots.transition()
-    .delay(function(d, i){
-      if(i == home) return 200; 
-      if(i >= 3 ) {
-        let distance = elements[i-numBigCircles]["real"]
-        if(distance <= 700) return 700
-        return 1400
-      }
-    })
-    .duration(1000)
-    .attr("opacity", 1)
-
-  dots.transition()
-  .delay(2000)
-  .duration(1000)
-  .attr("transform", function(d, i){
-    if(  i >= 3 ){
-      if( elements[i-numBigCircles] != undefined   ){
-        let _str=""
-        let val = 0
-        let x = elements[i-numBigCircles]["x"]
-        let y = elements[i-numBigCircles]["y"]
-        let distance = elements[i-numBigCircles]["real"]
-        let the = Math.atan2(y, x) * 180 / Math.PI;
-        if(the < 0 ) the += 360
-        if(distance > 700){
-          if(the <=90){
-            _str =   "translate("+val+", -"+val+")" // up right
-          }else if( the <= 180){
-            _str =   "translate(-"+val+", -"+val+")" // up left
-          }else if( the <= 270){
-            _str =   "translate(-"+val+", +"+val+")" // down left
-          }else {
-            _str =   "translate("+val+", "+val+")" //down - right
-          }
-        }else {
-          if(the <=90){
-            _str =   "translate(-"+val+", +"+val+")" // down left
-          }else if( the <= 180){
-            _str =   "translate("+val+", "+val+")" //down - right
-          }else if( the <= 270){
-            _str =   "translate("+val+", -"+val+")" // up right
-          }else {
-            _str =   "translate(-"+val+", -"+val+")" // up left
-          }
-        }
-        return _str
-        }
-        
-      }
-  })
-  .attr("opacity", 1)
+  if(animate){
     
+      let dots = isvg.selectAll("circle")
+    
+       //moving all the dots 
+       dots.transition()
+       .delay(0)
+       .duration(0)
+       .attr("transform", function(d, i){
+         if(  i >= 3 ){
+           if( elements[i-numBigCircles] != undefined   ){
+             let _str=""
+             let val = 20
+             let x = elements[i-numBigCircles]["x"]
+             let y = elements[i-numBigCircles]["y"]
+             let distance = elements[i-numBigCircles]["real"]
+             let the = Math.atan2(y, x) * 180 / Math.PI;
+             if(the < 0 ) the += 360
+             if(distance > 700){
+               if(the <=90){
+                 _str =   "translate("+val+", -"+val+")" // up right
+               }else if( the <= 180){
+                 _str =   "translate(-"+val+", -"+val+")" // up left
+               }else if( the <= 270){
+                 _str =   "translate(-"+val+", +"+val+")" // down left
+               }else {
+                 _str =   "translate("+val+", "+val+")" //down - right
+               }
+             }else {
+               if(the <=90){
+                 _str =   "translate(-"+val+", +"+val+")" // down left
+               }else if( the <= 180){
+                 _str =   "translate("+val+", "+val+")" //down - right
+               }else if( the <= 270){
+                 _str =   "translate("+val+", -"+val+")" // up right
+               }else {
+                 _str =   "translate(-"+val+", -"+val+")" // up left
+               }
+             }
+             return _str
+             }
+             
+           }
+       })
+       .attr("opacity", function(d,i){
+         if(i <= 2 ) return "1"
+         return "0"
+       })
+    
+    
+      dots.transition()
+        .delay(function(d, i){
+          if(i == home) return 200; 
+          if(i >= 3 ) {
+            let distance = elements[i-numBigCircles]["real"]
+            if(distance <= 700) return 700
+            return 1400
+          }
+        })
+        .duration(1000)
+        .attr("opacity", 1)
+    
+      dots.transition()
+      .delay(2000)
+      .duration(1000)
+      .attr("transform", function(d, i){
+        if(  i >= 3 ){
+          if( elements[i-numBigCircles] != undefined   ){
+            let _str=""
+            let val = 0
+            let x = elements[i-numBigCircles]["x"]
+            let y = elements[i-numBigCircles]["y"]
+            let distance = elements[i-numBigCircles]["real"]
+            let the = Math.atan2(y, x) * 180 / Math.PI;
+            if(the < 0 ) the += 360
+            if(distance > 700){
+              if(the <=90){
+                _str =   "translate("+val+", -"+val+")" // up right
+              }else if( the <= 180){
+                _str =   "translate(-"+val+", -"+val+")" // up left
+              }else if( the <= 270){
+                _str =   "translate(-"+val+", +"+val+")" // down left
+              }else {
+                _str =   "translate("+val+", "+val+")" //down - right
+              }
+            }else {
+              if(the <=90){
+                _str =   "translate(-"+val+", +"+val+")" // down left
+              }else if( the <= 180){
+                _str =   "translate("+val+", "+val+")" //down - right
+              }else if( the <= 270){
+                _str =   "translate("+val+", -"+val+")" // up right
+              }else {
+                _str =   "translate(-"+val+", -"+val+")" // up left
+              }
+            }
+            return _str
+            }
+            
+          }
+      })
+      .attr("opacity", 1)    
+  }
   let arrows = [0,1,2,3,4,5,6,7]
   let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
   let iarrows = isvg.selectAll("line")
