@@ -33,9 +33,8 @@ let legendRectSize = 18
 let legendSpacing = 4
 let color = d3.scaleOrdinal(d3.schemeCategory20b);
 let customColors = [
-  "#E57F21", //home
-  "#B2C56E", //less than 700
-  "#FAC392"
+  "#E4EE1C", //home
+  "#9EB506", 
 ]
 let labelsLegends = [{
    label: 'Your household'
@@ -78,13 +77,7 @@ function getRadius(r) {
 }
 function getColor(d, i) {
  if (i == home) return customColors[0]
- let distance = elements[i-numBigCircles]["real"]
-  if(distance <= 700) {
-    return  customColors[1]
-  }else{
-    return customColors[2]
-  }
-
+ return  customColors[1]
 }
 
 /*
@@ -398,7 +391,6 @@ function paint(nameDiv){
     .text("kWh / Month");
 
 
-    /* If you want legends uncomment this block
   let legend = isvg.selectAll('.legend')
     .data(labelsLegends)
     .enter()
@@ -424,7 +416,7 @@ function paint(nameDiv){
       .attr('y', legendRectSize - legendSpacing -8)
       .text(function (d) {
         return d.label;
-      }); */
+      }); 
 
 }
 
