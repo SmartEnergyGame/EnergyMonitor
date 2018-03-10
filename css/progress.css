@@ -22,15 +22,19 @@
 	background-color:#9BB200;
 }
 .meter-bar.red { 
-	background-color:#DA9695;
+	background-color:#D99594;
 }
 
 .meter-bar.blue { 
-	background-color:	#93CCDD;
+	background-color:	#92CBDC;
 }
 
 .meter-bar.yellow { 
-	background-color:#DCDB71;
+	background-color:#DDD976;
+}
+
+.meter-bar.navy { 
+	background-color:#78A1C1;
 }
 .meter-bar.gray { 
 	background-color: #F1F1F1; 
