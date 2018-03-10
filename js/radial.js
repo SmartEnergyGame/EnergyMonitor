@@ -37,10 +37,10 @@ let customColors = [
   "#9EB506", 
 ]
 let labelsLegends = [{
-   label: 'Your household'
+   label: 'Others'
  },
  {
-   label: 'Other households'
+   label: 'You'
  }
 ];
 
@@ -407,6 +407,7 @@ function paint(nameDiv){
     legend.append('circle')
       .attr('r', 10)
       .style('fill', function (d, i) {
+        i = (i+1)%2
         return customColors[i];
       })
       .style('stroke', "black");
