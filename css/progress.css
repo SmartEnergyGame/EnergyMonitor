@@ -9,6 +9,11 @@
 	border-radius: 5px;
 }
 
+.selement{
+	display: block;
+	margin-top: 35px;
+}
+
 .meter-bar {
   float: left;
 	height: 100%;
