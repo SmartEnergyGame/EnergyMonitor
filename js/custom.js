@@ -18,7 +18,6 @@
   document.getElementById("bell1").style.display = "none";
  }
 
-
  function hideRightMenu(){
   document.getElementById("sidenav-right").style.width = "0px";
   document.getElementById("bell1").style.display = "inline";

@@ -12,48 +12,40 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/custom.js"></script>
-   
     <style>
-        .btn-link, a:hover, a:visited, a:link, a:active{
-            color: black;
-            text-decoration: none;
-            text-decoration-color: transparent;
-        }
-      </style>
+      .btn-link, a:hover, a:visited, a:link, a:active{
+      color: black;
+      text-decoration: none;
+      text-decoration-color: transparent;
+      }
+    </style>
   </head>
   <body>
     <div class="container" style="margin-top:-70px;">
-        <center>
-            <h2 class="tittle">Last month's energy usage per household</h2>
-          </center>
-          <div id="chart"></div>
-
-          <div  id="lol">
-
-             <div class="range" >
-                <input type="range" min="1" max="7" steps="1" value="1">
-              </div>
-              
-              <ul class="range-labels">
-                <li>APR</li>
-                <li>MAY</li>
-                <li>JUN</li>
-                <li>JUL</li>
-                <li>AUG</li>
-                <li>SEP</li>
-                <li>OCT</li>
-                <li>NOV</li>
-                <li>DEV</li>
-                <li>JAN</li>
-                <li>FEB</li>
-                
-                <li class="active selected">MAR</li>
-              </ul>
-
-          </div>
-
+      <center>
+        <h2 class="tittle">Last month's energy usage per household</h2>
+      </center>
+      <div id="chart"></div>
+      <div  id="lol">
+        <div class="range" >
+          <input type="range" min="1" max="7" steps="1" value="1">
+        </div>
+        <ul class="range-labels">
+          <li>APR</li>
+          <li>MAY</li>
+          <li>JUN</li>
+          <li>JUL</li>
+          <li>AUG</li>
+          <li>SEP</li>
+          <li>OCT</li>
+          <li>NOV</li>
+          <li>DEV</li>
+          <li>JAN</li>
+          <li>FEB</li>
+          <li class="active selected">MAR</li>
+        </ul>
+      </div>
     </div>
-
-       <script src="js/slider.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
