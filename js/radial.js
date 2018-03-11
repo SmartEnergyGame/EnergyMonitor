@@ -249,6 +249,7 @@ function paint(nameDiv){
   if(animate){
     
       let dots = isvg.selectAll("circle")
+
     
        //moving all the dots 
        dots.transition()
@@ -348,6 +349,25 @@ function paint(nameDiv){
           }
       })
       .attr("opacity", 1)    
+
+      let home_dot =   d3.selectAll("#dot10")
+
+      for(let dur=1; dur<100; dur+=1){
+        if(dur & 0x01){
+          home_dot.transition()
+          .delay(dur*1000)
+          .duration(100)
+          .attr("r",15);
+        }else{
+          home_dot.transition()
+          .delay(dur*1000)
+          .duration(100)
+          .attr("r",10);
+        }
+      }
+
+
+      
   }
   let arrows = [0,1,2,3,4,5,6,7]
   let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
