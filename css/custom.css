@@ -48,6 +48,13 @@
     border-color: #dadada;
 }
 
+.scale-values {
+    width: 730px;
+    height: 30px;
+    position: absolute;
+    margin-left: -560px;
+}
+
 .first-txt{
     margin-top: 20px;
 }
@@ -75,10 +82,19 @@
     text-align: center;
 }
 
-.glyphicon.glyphicon-option-horizontal {
+.glyphicon-index {
     font-size: 55px;
     cursor: pointer;
-    margin-left:-140px;
+    margin-left:-220px;
+    
+    color:gray;
+}
+
+
+.glyphicon-actions {
+    font-size: 55px;
+    cursor: pointer;
+    margin-left:-220px;
     color:gray;
 }
 
