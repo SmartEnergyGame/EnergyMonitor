@@ -163,17 +163,16 @@ function sum(la, le ){
 }
 
 /* Pulsing effect */ 
-function pulsingEffect(){
-  let home_dot =   d3.selectAll("#dot10")
-
+function pulsingEffect(let num){
+  let dot =   d3.selectAll("#dot"+num)
   for(let dur=1; dur<100; dur+=1){
     if(dur & 0x01){
-      home_dot.transition()
+      dot.transition()
       .delay(dur*1000)
       .duration(100)
       .attr("r",15);
     }else{
-      home_dot.transition()
+       dot.transition()
       .delay(dur*1000)
       .duration(100)
       .attr("r",10);
