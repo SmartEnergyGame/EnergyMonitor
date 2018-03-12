@@ -162,6 +162,26 @@ function sum(la, le ){
   return la + le
 }
 
+/* Pulsing effect */ 
+function pulsingEffect(){
+  let home_dot =   d3.selectAll("#dot10")
+
+  for(let dur=1; dur<100; dur+=1){
+    if(dur & 0x01){
+      home_dot.transition()
+      .delay(dur*1000)
+      .duration(100)
+      .attr("r",15);
+    }else{
+      home_dot.transition()
+      .delay(dur*1000)
+      .duration(100)
+      .attr("r",10);
+    }
+  }
+}
+
+
 /*
   Paint the circles
 */
