@@ -45,6 +45,11 @@ let labelsLegends = [{
  }
 ];
 
+/*
+  Global d3
+*/
+let isvg = undefined
+
 let elements = []
 let iradios = []
 let radius = 0
@@ -180,6 +185,57 @@ function pulsingEffect(num){
   }
 }
 
+/* */ 
+function translationEffect(_val, _opacity, _delay, _duration){
+  let dots = isvg.selectAll("circle")
+
+  dots.transition()
+  .delay(_delay)
+  .duration(_duration)
+  .attr("transform", function(d, i){
+    if(  i >= 3 ){
+      if( elements[i-numBigCircles] != undefined   ){
+        let _str=""
+        let val = _val
+        let x = elements[i-numBigCircles]["x"]
+        let y = elements[i-numBigCircles]["y"]
+        let distance = elements[i-numBigCircles]["real"]
+        let the = Math.atan2(y, x) * 180 / Math.PI;
+        if(the < 0 ) the += 360
+        if(distance > 700){
+          if(the <=90){
+            _str =   "translate("+val+", -"+val+")" // up right
+          }else if( the <= 180){
+            _str =   "translate(-"+val+", -"+val+")" // up left
+          }else if( the <= 270){
+            _str =   "translate(-"+val+", +"+val+")" // down left
+          }else {
+            _str =   "translate("+val+", "+val+")" //down - right
+          }
+        }else {
+          if(the <=90){
+            _str =   "translate(-"+val+", +"+val+")" // down left
+          }else if( the <= 180){
+            _str =   "translate("+val+", "+val+")" //down - right
+          }else if( the <= 270){
+            _str =   "translate("+val+", -"+val+")" // up right
+          }else {
+            _str =   "translate(-"+val+", -"+val+")" // up left
+          }
+        }
+        return _str
+        }
+        
+      }
+  })
+  .attr("opacity", function(d,i){
+    if(i <= 2 ){
+      return "1"
+    } 
+    return _opacity
+  })
+}
+
 
 /*
   Paint the circles
@@ -187,7 +243,7 @@ function pulsingEffect(num){
 function paint(nameDiv){
 
   let ibody = d3.select("#chart")
-  let isvg = ibody.append("svg")
+  isvg = ibody.append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.left + margin.right)
     .attr("transform", "translate(" + (margin.left) + "," + (margin.top )+ ")")
@@ -268,54 +324,8 @@ function paint(nameDiv){
   if(animate){
     
       let dots = isvg.selectAll("circle")
-
-    
-       //moving all the dots 
-       dots.transition()
-       .delay(0)
-       .duration(0)
-       .attr("transform", function(d, i){
-         if(  i >= 3 ){
-           if( elements[i-numBigCircles] != undefined   ){
-             let _str=""
-             let val = 20
-             let x = elements[i-numBigCircles]["x"]
-             let y = elements[i-numBigCircles]["y"]
-             let distance = elements[i-numBigCircles]["real"]
-             let the = Math.atan2(y, x) * 180 / Math.PI;
-             if(the < 0 ) the += 360
-             if(distance > 700){
-               if(the <=90){
-                 _str =   "translate("+val+", -"+val+")" // up right
-               }else if( the <= 180){
-                 _str =   "translate(-"+val+", -"+val+")" // up left
-               }else if( the <= 270){
-                 _str =   "translate(-"+val+", +"+val+")" // down left
-               }else {
-                 _str =   "translate("+val+", "+val+")" //down - right
-               }
-             }else {
-               if(the <=90){
-                 _str =   "translate(-"+val+", +"+val+")" // down left
-               }else if( the <= 180){
-                 _str =   "translate("+val+", "+val+")" //down - right
-               }else if( the <= 270){
-                 _str =   "translate("+val+", -"+val+")" // up right
-               }else {
-                 _str =   "translate(-"+val+", -"+val+")" // up left
-               }
-             }
-             return _str
-             }
-             
-           }
-       })
-       .attr("opacity", function(d,i){
-         if(i <= 2 ) return "1"
-         return "0"
-       })
-    
-    
+      //moving all the dots  
+      translationEffect(20,"0",0,0)
       dots.transition()
         .delay(function(d, i){
           if(i == home) return 200; 
@@ -327,66 +337,8 @@ function paint(nameDiv){
         })
         .duration(1000)
         .attr("opacity", 1)
-    
-      dots.transition()
-      .delay(2000)
-      .duration(1000)
-      .attr("transform", function(d, i){
-        if(  i >= 3 ){
-          if( elements[i-numBigCircles] != undefined   ){
-            let _str=""
-            let val = 0
-            let x = elements[i-numBigCircles]["x"]
-            let y = elements[i-numBigCircles]["y"]
-            let distance = elements[i-numBigCircles]["real"]
-            let the = Math.atan2(y, x) * 180 / Math.PI;
-            if(the < 0 ) the += 360
-            if(distance > 700){
-              if(the <=90){
-                _str =   "translate("+val+", -"+val+")" // up right
-              }else if( the <= 180){
-                _str =   "translate(-"+val+", -"+val+")" // up left
-              }else if( the <= 270){
-                _str =   "translate(-"+val+", +"+val+")" // down left
-              }else {
-                _str =   "translate("+val+", "+val+")" //down - right
-              }
-            }else {
-              if(the <=90){
-                _str =   "translate(-"+val+", +"+val+")" // down left
-              }else if( the <= 180){
-                _str =   "translate("+val+", "+val+")" //down - right
-              }else if( the <= 270){
-                _str =   "translate("+val+", -"+val+")" // up right
-              }else {
-                _str =   "translate(-"+val+", -"+val+")" // up left
-              }
-            }
-            return _str
-            }
-            
-          }
-      })
-      .attr("opacity", 1)    
-
-      let home_dot =   d3.selectAll("#dot10")
-
-      for(let dur=1; dur<100; dur+=1){
-        if(dur & 0x01){
-          home_dot.transition()
-          .delay(dur*1000)
-          .duration(100)
-          .attr("r",15);
-        }else{
-          home_dot.transition()
-          .delay(dur*1000)
-          .duration(100)
-          .attr("r",10);
-        }
-      }
-
-
-      
+      translationEffect(0,"1", 2000, 1000)
+      pulsingEffect(10)
   }
   let arrows = [0,1,2,3,4,5,6,7]
   let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
