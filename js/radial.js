@@ -236,6 +236,21 @@ function translationEffect(_val, _opacity, _delay, _duration){
   })
 }
 
+function fadingEffect(_duration){
+  let dots = isvg.selectAll("circle")
+  dots.transition()
+  .delay(function(d, i){
+    if(i == home) return 200; 
+    if(i >= 3 ) {
+      let distance = elements[i-numBigCircles]["real"]
+      if(distance <= 700) return 700
+      return 1400
+    }
+  })
+  .duration(_duration)
+  .attr("opacity", 1)
+}
+
 
 /*
   Paint the circles
@@ -323,20 +338,8 @@ function paint(nameDiv){
 
   if(animate){
     
-      let dots = isvg.selectAll("circle")
-      //moving all the dots  
       translationEffect(20,"0",0,0)
-      dots.transition()
-        .delay(function(d, i){
-          if(i == home) return 200; 
-          if(i >= 3 ) {
-            let distance = elements[i-numBigCircles]["real"]
-            if(distance <= 700) return 700
-            return 1400
-          }
-        })
-        .duration(1000)
-        .attr("opacity", 1)
+      fadingEffect(1000)
       translationEffect(0,"1", 2000, 1000)
       pulsingEffect(10)
   }
