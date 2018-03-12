@@ -168,9 +168,9 @@ function sum(la, le ){
 }
 
 /* Pulsing effect */ 
-function pulsingEffect(num){
+function pulsingEffect(num, until){
   let dot =   d3.selectAll("#dot"+num)
-  for(let dur=1; dur<100; dur+=1){
+  for(let dur=1; dur<until; dur+=1){
     if(dur & 0x01){
       dot.transition()
       .delay(dur*1000)
@@ -335,13 +335,11 @@ function paint(nameDiv){
     })
     .style("fill", getColor)
 
-
   if(animate){
-    
       translationEffect(20,"0",0,0)
       fadingEffect(1000)
       translationEffect(0,"1", 2000, 1000)
-      pulsingEffect(10)
+      pulsingEffect("10", 100)
   }
   let arrows = [0,1,2,3,4,5,6,7]
   let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
