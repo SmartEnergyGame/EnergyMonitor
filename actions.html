@@ -108,109 +108,120 @@
       <center>
         <h2 class="tittle" >Your activities</h2>
       </center>
-      <h3 class="community-goal" style="padding-left: 940px; margin-top:-23px "> Your Goal</h3>
-      <div class="doted" style="left: 1050px; top: 50px;height: 180px;"> </div>
+      <h3 class="community-goal" id="community-goal" style="padding-left: 940px; margin-top:-23px "> Your Goal</h3>
+      <div class="doted" id="doted" style="left: 1050px; top: 50px;height: 180px;"> </div>
       <div class="left-div-actions" style="display: inline;">
-        <img src="img/floorplan.png" alt="" style="margin-left: 310px" width="250px" height="505px">
+        <img src="img/floorplan.png" alt="" style="margin-left: 310px" width="250px" height="505px" usemap="#floormap">
+        <map name="floormap">
+          <area shape="circle" coords="135,150,15"   onclick="clickBoiler()" alt="boiler">
+          <area shape="circle" coords="170,430,15"   onclick="clickBoiler()" alt="boiler">
+        </map>
       </div>
       <div class="right-div-actions" style="float:right; margin-right: -30px;">
-        <div class="meter" style="height: 150px;">
-          <div class='meter-bar green' style="width: 60%;height: 150px;" data-tooltip='This month’s aggregated energy consumption by the community.'>
-            <div class="txt-green first-txt" >
-              This month:
+        
+        <div id="opt_one_actions">
+          <div class="meter" style="height: 150px;">
+            <div class='meter-bar green' style="width: 60%;height: 150px;" data-tooltip='This month’s aggregated energy consumption by the community.'>
+              <div class="txt-green first-txt" >
+                This month:
+              </div>
+              <div class="progress-green">
+                40,500
+              </div>
+              <div class="txt-green">
+                kWh
+              </div>
             </div>
-            <div class="progress-green">
-              40,500
-            </div>
-            <div class="txt-green">
-              kWh
+            <div class='meter-bar gray' style="width: 20%;height: 150px;" data-tooltip='Last month’s aggregated energy on the same date '>
+              <div class="txt-gray first-txt" style="width:300px">
+                <!-- Last month: 58987 kWh -->
+              </div>
             </div>
           </div>
-          <div class='meter-bar gray' style="width: 20%;height: 150px;" data-tooltip='Last month’s aggregated energy on the same date '>
-            <div class="txt-gray first-txt" style="width:300px">
-              <!-- Last month: 58987 kWh -->
+          <span  class="glyphicon glyphicon-option-horizontal glyphicon-actions" onclick="displayOptions()"></span>
+          <div id="sub-progress" style="display: inline; ">
+            <div class="selement">
+              <img src="img/heatCool.png"  width="70px" height="60px" style="float:left">
+              <div class="doted" style="left: 1105px; top: 300px;height: 63px;"> </div>
+              <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:470px; height: 60px;">
+                <div class='meter-bar red' style="width: 70%;height: 60px;" >
+                  <div style="margin-top: 20px">
+                    <p class="sub-txt-number" > 18,800 </p>
+                    <p class="kWh">kWh</p>
+                  </div>
+                </div>
+                <div class='meter-bar gray' style="width: 5%;height: 60px;">
+                  <div style="margin-top: 10px">
+                    <p class="sub-txt-gray-number ">
+                      <!-- 21,000  -->
+                  </div>
+                  <!-- <p class="kWh2">kWh -->
+                </div>
+              </div>
+            </div>
+            <div class="selement">
+              <img src="img/waterBoiler.png"  width="70px" height="60px" style="float:left">
+              <div class="doted" style="left: 990px; top: 395px;height: 63px;"> </div>
+              <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:350px; height: 60px;">
+                <div class='meter-bar blue' style="width: 70%;height: 60px;" >
+                  <div style="margin-top: 20px">
+                    <p class="sub-txt-number" > 11,500 </p>
+                    <p class="kWh">kWh</p>
+                  </div>
+                </div>
+                <div class='meter-bar gray' style="width: 5%;height: 60px;">
+                  <div style="margin-top: 10px">
+                    <p class="sub-txt-gray-number ">
+                      <!-- 21,000  -->
+                  </div>
+                  <!-- <p class="kWh2">kWh -->
+                </div>
+              </div>
+            </div>
+            <div class="selement">
+              <img src="img/lights.png"  width="70px" height="60px" style="float:left">
+              <div class="doted" style="left: 870px; top: 490px;height: 63px;"> </div>
+              <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:200px; height: 60px;">
+                <div class='meter-bar yellow' style="width: 60%;height: 60px;" >
+                  <div style="margin-top: 20px">
+                    <p class="sub-txt-number" > 4,200 </p>
+                    <p class="kWh">kWh</p>
+                  </div>
+                </div>
+                <div class='meter-bar gray' style="width: 5%;height: 60px;">
+                  <div style="margin-top: 10px">
+                    <p class="sub-txt-gray-number ">
+                      <!-- 21,000  -->
+                  </div>
+                  <!-- <p class="kWh2">kWh -->
+                </div>
+              </div>
+            </div>
+            <div class="selement">
+              <img src="img/appliances.png"  width="70px" height="60px" style="float:left">
+              <div class="doted" style="left: 835px; top: 585px;height: 63px;"> </div>
+              <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:250px; height: 60px;">
+                <div class='meter-bar navy' style="width: 30%;height: 60px;" >
+                  <div style="margin-top: 20px">
+                    <p class="sub-txt-number" > 3,000 </p>
+                    <p class="kWh">kWh</p>
+                  </div>
+                </div>
+                <div class='meter-bar gray' style="width: 5%;height: 60px;">
+                  <div style="margin-top: 10px">
+                    <p class="sub-txt-gray-number ">
+                      <!-- 21,000  -->
+                  </div>
+                  <!-- <p class="kWh2">kWh -->
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <span  class="glyphicon glyphicon-option-horizontal glyphicon-actions" onclick="displayOptions()"></span>
-        <div id="sub-progress" style="display: inline; ">
-          <div class="selement">
-            <img src="img/heatCool.png"  width="70px" height="60px" style="float:left">
-            <div class="doted" style="left: 1105px; top: 300px;height: 63px;"> </div>
-            <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:470px; height: 60px;">
-              <div class='meter-bar red' style="width: 70%;height: 60px;" >
-                <div style="margin-top: 20px">
-                  <p class="sub-txt-number" > 18,800 </p>
-                  <p class="kWh">kWh</p>
-                </div>
-              </div>
-              <div class='meter-bar gray' style="width: 5%;height: 60px;">
-                <div style="margin-top: 10px">
-                  <p class="sub-txt-gray-number ">
-                    <!-- 21,000  -->
-                </div>
-                <!-- <p class="kWh2">kWh -->
-              </div>
-            </div>
-          </div>
-          <div class="selement">
-            <img src="img/waterBoiler.png"  width="70px" height="60px" style="float:left">
-            <div class="doted" style="left: 990px; top: 395px;height: 63px;"> </div>
-            <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:350px; height: 60px;">
-              <div class='meter-bar blue' style="width: 70%;height: 60px;" >
-                <div style="margin-top: 20px">
-                  <p class="sub-txt-number" > 11,500 </p>
-                  <p class="kWh">kWh</p>
-                </div>
-              </div>
-              <div class='meter-bar gray' style="width: 5%;height: 60px;">
-                <div style="margin-top: 10px">
-                  <p class="sub-txt-gray-number ">
-                    <!-- 21,000  -->
-                </div>
-                <!-- <p class="kWh2">kWh -->
-              </div>
-            </div>
-          </div>
-          <div class="selement">
-            <img src="img/lights.png"  width="70px" height="60px" style="float:left">
-            <div class="doted" style="left: 870px; top: 490px;height: 63px;"> </div>
-            <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:200px; height: 60px;">
-              <div class='meter-bar yellow' style="width: 60%;height: 60px;" >
-                <div style="margin-top: 20px">
-                  <p class="sub-txt-number" > 4,200 </p>
-                  <p class="kWh">kWh</p>
-                </div>
-              </div>
-              <div class='meter-bar gray' style="width: 5%;height: 60px;">
-                <div style="margin-top: 10px">
-                  <p class="sub-txt-gray-number ">
-                    <!-- 21,000  -->
-                </div>
-                <!-- <p class="kWh2">kWh -->
-              </div>
-            </div>
-          </div>
-          <div class="selement">
-            <img src="img/appliances.png"  width="70px" height="60px" style="float:left">
-            <div class="doted" style="left: 835px; top: 585px;height: 63px;"> </div>
-            <div class="meter"  data-tooltip='Your community is on too high heating, preventing to meet the goal.'  style="margin-left:70px; width:250px; height: 60px;">
-              <div class='meter-bar navy' style="width: 30%;height: 60px;" >
-                <div style="margin-top: 20px">
-                  <p class="sub-txt-number" > 3,000 </p>
-                  <p class="kWh">kWh</p>
-                </div>
-              </div>
-              <div class='meter-bar gray' style="width: 5%;height: 60px;">
-                <div style="margin-top: 10px">
-                  <p class="sub-txt-gray-number ">
-                    <!-- 21,000  -->
-                </div>
-                <!-- <p class="kWh2">kWh -->
-              </div>
-            </div>
-          </div>
+        <div id="opt_two_actions" style="display:none">
+            <h1><3 Peace Ana</h1>
         </div>
+
       </div>
     </div>
   </body>

@@ -33,3 +33,19 @@
   }
 
  }
+
+ function clickBoiler(){
+  // alert("hello")
+  if(document.getElementById("opt_two_actions").style.display == "none"){
+    document.getElementById("opt_two_actions").style.display = "block";
+    document.getElementById("opt_one_actions").style.display = "none";
+    document.getElementById("community-goal").style.display = "none";
+    document.getElementById("doted").style.display = "none";
+
+  }else{
+    document.getElementById("opt_two_actions").style.display = "none";
+    document.getElementById("opt_one_actions").style.display = "block";
+    document.getElementById("community-goal").style.display = "block";
+    document.getElementById("doted").style.display = "block";
+  }
+ }
