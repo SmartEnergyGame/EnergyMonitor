@@ -140,6 +140,12 @@
 }
 
 .input_radio {
-    font-size: 20px;
-    color: #000; 
+
 }
+
+.elements_form {
+  width: 350px;
+  margin-left: 40px;
+  font-size: 20px;
+}
+
