@@ -49,3 +49,6 @@
     document.getElementById("doted").style.display = "block";
   }
  }
+function changeImage(){
+  alert("love you")
+ }
