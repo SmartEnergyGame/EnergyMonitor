@@ -50,5 +50,11 @@
   }
  }
 function changeImage(){
-  alert("love you")
+  var rates = document.getElementsByName('temperature_scale');
+  var rate_value;
+  for(var i = 0; i < rates.length; i++){
+      if(rates[i].checked){
+        alert("The checked radio button was"+ rates[i].value)
+      }
+  }
  }
