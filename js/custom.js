@@ -54,7 +54,7 @@ function changeImage(){
   var rate_value;
   for(var i = 0; i < rates.length; i++){
       if(rates[i].checked){
-        document.getElementById("imageid").src="img/time"+rates[i].value+".png";
+        document.getElementById("series-image").src="img/time"+rates[i].value+".png";
       }
   }
  }
