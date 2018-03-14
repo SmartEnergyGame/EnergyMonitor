@@ -243,8 +243,7 @@ function fadingEffect(_duration){
     if(i == home) return 200; 
     if(i >= 3 ) {
       let distance = elements[i-numBigCircles]["real"]
-      if(distance <= 700) return 700
-      return 1400
+       return 700
     }
   })
   .duration(_duration)
