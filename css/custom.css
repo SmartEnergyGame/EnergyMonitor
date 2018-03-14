@@ -149,7 +149,11 @@
   font-size: 20px;
 }
 
-
 .input_submit {
     float: right;
+}
+
+.img_time{
+  width:450px;
+  height:150px;
 }
