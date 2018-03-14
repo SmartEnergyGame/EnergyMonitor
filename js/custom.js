@@ -54,7 +54,7 @@ function changeImage(){
   var rate_value;
   for(var i = 0; i < rates.length; i++){
       if(rates[i].checked){
-        alert("The checked radio button was"+ rates[i].value)
+        document.getElementById("imageid").src="img/time"+rates[i].value+".png";
       }
   }
  }
