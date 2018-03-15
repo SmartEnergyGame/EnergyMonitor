@@ -287,6 +287,9 @@ function paint(nameDiv){
       if(d > 0 ) return d
     })
     .tickPadding(5)
+    .tickSize(10)
+    //.style("font-size", "17px")
+
   let bol = [
       {id: "bigCircle",radio:1190},
       {id: "middleCircle",radio:700},
@@ -387,6 +390,9 @@ function paint(nameDiv){
     .call(x_axis)
     .style("stroke-width", "0")
 
+  //Change size text chart
+  isvg.selectAll("text").style("font-size", "14px")
+
   isvg.append("line")          // attach a line
       .style("stroke", "black")  // colour the line
       .style("stroke-width", "1")
@@ -398,8 +404,9 @@ function paint(nameDiv){
   //  now add titles and labels to the axes
   isvg.append("text")
     .attr("text-anchor", "middle") // this makes it easy to centre the text as the transform is applied to the anchor
-    .attr("transform", "translate(" + (width / 2  + 60) + "," + 10 + ")") // text is drawn off the screen top left, move down and out and rotate
-    .text("kWh / Month");
+    .attr("transform", "translate(" + (width / 2  + 60) + "," + 15 + ")") // text is drawn off the screen top left, move down and out and rotate
+    .text("kWh / Month")
+    .style("font-size", "17px")
 
 
   let legend = isvg.selectAll('.legend')
