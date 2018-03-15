@@ -167,20 +167,32 @@ function sum(la, le ){
   return la + le
 }
 
+
 /* Pulsing effect */ 
-function pulsingEffect(num, until){
-  let dot =   d3.selectAll("#dot"+num)
-  for(let dur=1; dur<until; dur+=1){
-    if(dur & 0x01){
+function pulsingEffect(num, from, until, delay=1000){
+  let houses = [home]
+  let len = elements.length
+  let step = len / 5
+  for (let i = 0; i <= 4; ++i )
+    houses.push((home+step*i +1)%len)
+  
+  let aux = 3000;
+  
+  for(let dur=from; dur<until; dur+=1){
+    for(let h in houses){
+      let name = "#dot"+houses[h]
+      let dot =   d3.selectAll(name)
+      if(dur & 0x01){
       dot.transition()
-      .delay(dur*1000)
-      .duration(100)
-      .attr("r",15);
-    }else{
-       dot.transition()
-      .delay(dur*1000)
-      .duration(100)
-      .attr("r",10);
+      .delay(dur*delay +aux)
+        .duration(100)
+        .attr("r",15);
+      }else{
+         dot.transition()
+        .delay(dur*delay + aux)
+        .duration(100)
+        .attr("r",10);
+      }
     }
   }
 }
@@ -338,7 +350,7 @@ function paint(nameDiv){
       translationEffect(20,"0",0,0)
       fadingEffect(1000)
       translationEffect(0,"1", 2000, 1000)
-      pulsingEffect("10", 10000)
+      pulsingEffect(1, 1, 1000)
   }
   let arrows = [0,1,2,3,4,5,6,7]
   let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
