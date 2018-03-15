@@ -64,6 +64,7 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: gray;
+  writing-mode: vertical-rl;
 }
 
 .kWh{
