@@ -64,7 +64,6 @@
 	font-weight: bold;
 	font-size: 20px;
 	color: gray;
-  writing-mode: vertical-rl;
 }
 
 .kWh{
@@ -153,6 +152,7 @@
 	color: gray;
 	font-size: 30px;
 	line-height: 25px;
+  writing-mode: vertical-rl;
 }
 
 .community-goal {
