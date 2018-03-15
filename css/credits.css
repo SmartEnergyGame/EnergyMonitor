@@ -1,0 +1,371 @@
+/* --------- COLORS -------------- */
+
+html, body {
+  background: black;
+  color: white;
+}
+
+/* ------------ FONTS --------------- */
+
+html, body {
+  font-family: 'BenchNine', sans-serif;
+  text-transform: uppercase;
+  font-size: 49px;
+  letter-spacing: -.04rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: .31rem;
+  letter-spacing: .04rem;
+}
+
+span.supporting,
+span.credentials {
+  font-size: .63rem;
+}
+
+span.credentials {
+  text-transform: lowercase;
+}
+
+span.hidden {
+  /* Hide the letters that are created via animated*/
+  /*visibility: hidden;*/
+  /* Use color instead of visibility for IE */
+  color: black;
+  font-size: inherit;
+  z-index: 0;
+}
+
+
+/* ----------- LAYOUT --------------*/
+
+body {
+  /* hide everything that doesn't fit on-screen*/
+  height: 100%;
+  overflow: hidden;
+}
+
+body > div * {
+  position: relative;   
+}
+
+body > div > div {
+  width: 6.94rem;
+  margin-bottom: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body > div > div:first-of-type {
+  margin-top: 40vh;
+}
+
+body > div > div:last-of-type {
+  margin-bottom: 50vh;;
+}
+
+/* Stagger all the alignments */
+.directed h3 {
+  right: .7rem;
+}
+
+.screenplay {
+  right: .55rem;
+}
+
+.screenplay h3 {
+  left: .43rem;
+}
+
+.screenplay h2:nth-of-type(2) {
+  left: .275rem;
+}
+
+.screenplay h2:last-of-type {
+  right: .57rem;
+}
+
+.story {
+  right: .95rem;
+}
+
+.story h2:last-of-type {
+  right: .32rem;
+}
+
+.produced {
+  right: 1.38rem;
+}
+
+.produced h3 {
+  left: .2rem;
+}
+
+.produced h2:last-of-type {
+  left: .51rem;
+}
+
+/* ---- VERTICAL LINES & THEIR ANIMATIONS ---- */
+
+/* these are the same for all animations */
+h2::after {
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  /* add z-index since we can't use visibility for the hidden letters*/
+  z-index: 1;
+}
+
+/* for each dripping letter, create the line, then animate down */
+/* stagger animation start times */
+/* keep a consistent "drip" speed */
+
+.directed h2::after {
+  /* --- The T in TRACHTENBERG --- */
+  content: "";
+  position: absolute;
+  border-left: .123rem solid white;
+  top: .191rem;
+  left: 2.05rem;
+  bottom: -11.32rem;
+  animation-name: directedT;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes directedT {
+  from {bottom: .191rem;}
+  to {bottom: -11.32rem;}
+}
+
+.screenplay h2:first-of-type::after {
+  /* --- The B in CAMPBELL --- */
+  content: "";
+  position: absolute;
+  border-left: .122rem solid white;
+  top: .124rem;
+  left: 4.388rem;
+  bottom: -.75rem;
+  animation-name: screenplayB;
+  animation-duration: 1.7s; /* KEEP CONSTANT */
+  animation-delay: 6s;
+}
+
+@keyframes screenplayB {
+  from {bottom: .19rem;}
+  to {bottom: -.82rem;}
+}
+
+.screenplay h2:nth-of-type(2)::after {
+  /* --- The T in STUECKEN --- */
+  content: "";
+  position: absolute;
+  border-left: .117rem solid white;
+  top: 0.18rem;
+  left: 3.47rem;
+  bottom: -.822rem;
+  animation-name: screenplayT;
+  animation-duration: 1.7s; /* KEEP CONSTANT */
+  animation-delay: 6.6s;
+}
+
+@keyframes screenplayT {
+  from {bottom: .18rem;}
+  to {bottom: -.822rem;}
+}
+
+.screenplay h2:last-of-type::after {
+  /* --- The I in DAMIEN --- */
+  content: "";
+  position: absolute;
+  border-left: .12rem solid white;
+  top: .111rem;
+  left: 2.75rem;
+  bottom: -11.324rem;
+  animation-name: screenplayI;
+  animation-duration: 6s;
+  animation-delay: 8.4s;
+}
+
+@keyframes screenplayI {
+  from {bottom: .18rem;}
+  to {bottom: -11.324rem;}
+}
+
+.story h2:first-of-type::after {
+  /* --- The E in CAMPBELL --- */
+  content: "";
+  position: absolute;
+  border-left: .109rem solid white;
+  top: .114rem;
+  left: 4.8rem;
+  bottom: -.815rem;
+  animation-name: storyE;
+  animation-duration: 1.7s; /* KEEP CONSTANT */
+  animation-delay: 12.6s;
+}
+
+@keyframes storyE {
+  from {bottom: .18rem;}
+  to {bottom: -.815rem;}
+}
+
+.story h2:last-of-type::after {
+  /* --- The T in MATT --- */
+  content: "";
+  position: absolute;
+  border-left: .123rem solid white;
+  top: .18rem;
+  left: 2.47rem;
+  bottom: -11.31rem;
+  animation-name: storyT;
+  animation-duration: 6s;
+  animation-delay: 14.3s;
+}
+
+@keyframes storyT {
+  from {bottom: .18rem;}
+  to {bottom: -11.33rem;}
+}
+
+.produced h2:first-of-type::after {
+  /* --- The R in ABRAMS --- */
+  content: "";
+  position: absolute;
+  border-left: .121rem solid white;
+  top: .114rem;
+  left: 2.98rem;
+  bottom: -.808rem;
+  animation-name: producedR;
+  animation-duration: 1.7s; /* KEEP CONSTANT */
+  animation-delay: 18.9s;
+}
+
+@keyframes producedR {
+  from {bottom: .18rem;}
+  to {bottom: -.808rem;}
+}
+
+.produced h2:last-of-type::after {
+  /* --- The I in LINDSEY --- */
+  content: "";
+  position: absolute;
+  border-left: .111rem solid white;
+  top: .12rem;
+  left: 1.11rem;
+  bottom: -5.5rem;
+  animation-name: producedI;
+  animation-duration: 4s;
+  animation-delay: 20.5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes producedI {
+  from {bottom: .18rem;}
+  to {bottom: -70vh;} /* = margin-bottom*/
+}
+
+
+/* -----------EMULATE HIDDEN LETTERS --------- */
+
+span.hidden::before,
+span.hidden::after {
+  content: "";
+  position: absolute;
+  /* IE bug - it won't override the invisibility of the parent*/
+  visibility: visible;
+  /* Instead, rely on color and z-index */
+  z-index: 1;
+}
+
+span.hidden.e::before {
+  border-top: .09rem solid white;
+  border-bottom: .09rem solid white;
+  top: .3rem;
+  left: .18rem;
+  bottom: .66rem;
+  right: 0rem;
+}
+
+span.hidden.e::after {
+  border-bottom: .09rem solid white;
+  top: .6rem;
+  left: .18rem;
+  bottom: .37rem;
+  right: 0rem;
+}
+
+span.hidden.h::before {
+  border-bottom: .07rem solid white;
+  top: .3rem;
+  left: .1rem;
+  bottom: .66rem;
+  right: .16rem;
+}
+
+span.hidden.h::after {
+  border-left: .09rem solid white;
+  top: .3rem;
+  left: .06rem;
+  bottom: .37rem;
+  right: .18rem;
+}
+
+span.hidden.b::before {
+  top: .3rem;
+  bottom: .65rem;
+  left: .23rem;
+  right: 0;
+  border-radius: 0 .1rem .09rem 0;
+  border-right: .1rem solid white;
+  border-top: .1rem solid white;
+  border-bottom: .09rem solid white;
+}
+
+span.hidden.b::after {
+  top: .6rem;
+  bottom: .34rem;
+  left: .23rem;
+  right: 0;
+  border-radius: 0 .09rem .1rem 0;
+  border-right: .1rem solid white;
+  border-bottom: .1rem solid white;
+}
+
+/* ---------- WHOLE PAGE ANIMATIONS ---------- */
+
+/* fade in to start */
+body {
+  animation-name: fadeIn;
+  animation-duration: .7s;
+  animation-delay: .8s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* scroll the credits through they body window */
+div.credits {
+  animation-name: scroll;
+  animation-duration: 17s;
+  animation-delay: 2.6s;
+  /* start and end very slowly, then go quickly */
+  animation-timing-function: cubic-bezier(.81,0,.19,1);
+  animation-fill-mode: both;
+}
+
+/* stop at key points to see each credit */
+@keyframes scroll {
+  0% {}
+  /* Don't use calc inside translate - IE bug*/
+  /* Instead, separate into two translateY values */
+  /* Actually, cut the vh segment entirely, it messed up IE */
+  33% {transform: translateY(-500px) /*translateY(-30vh)*/;}
+  67% {transform: translateY(-1300px) /*translateY(-30vh)*/;}
+  100% {transform: translateY(-1900px) /*translateY(-30vh)*/;}
+}
