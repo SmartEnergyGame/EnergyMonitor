@@ -16,11 +16,19 @@
     <script src="js/radial.js"></script>
     <script src="js/custom.js"></script>
     <style>
-      .btn-link, a:hover, a:visited, a:link, a:active{
-      color: black;
-      text-decoration: none;
-      text-decoration-color: transparent;
-      font-weight: bold;
+      a:hover, a:visited, a:link, a:active{
+        color: black;
+        text-decoration: none;
+        text-decoration-color: transparent;
+      }
+      .not_active_text {
+        font-weight: bold;
+      }
+      .active_button {
+        font-weight: normal;
+      }
+      .active_text {
+        background-color: #dadada;
       }
     </style>
   </head>
@@ -29,17 +37,17 @@
       <center>
         <a href="calendar.html" style="border-color:transparent" > <img src="img/date0.png" alt="" class="img-logo">   </a>
         <br><br>
-        <div class="btn-link" style="background-color: #F1F1F1;">
-          <a href="index.html">Our Status</a>
+        <div class="btn-link" >
+          <a href="index.html" class="not_active_text">Our Status</a>
         </div>
-        <div class="btn-link" style="background-color: #dadada">
-          <a href="#">Our Community</a>
-        </div>
-        <div class="btn-link">
-          <a href="actions.html">My Actions</a>
+        <div class="btn-link active_button">
+          <a href="#" class="active_text">Our Community</a>
         </div>
         <div class="btn-link">
-          <a href="wallet.html"> My Wallet</a>
+          <a href="actions.html" class="not_active_text">My Actions</a>
+        </div>
+        <div class="btn-link">
+          <a href="wallet.html" class="not_active_text"> My Wallet</a>
         </div>
         <a href="credits.html" style="border-color:transparent">   <span  style="position:relative; top:30px;" class="glyphicon glyphicon-info-sign" ></span> </a>
       </center>
@@ -136,7 +144,7 @@
     </ul>
     <script>
       /* way one */
-      
+
       /*Way two*/
       let data  = [
         {name:"House1",y:600},
