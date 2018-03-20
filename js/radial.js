@@ -282,7 +282,7 @@ function paint(nameDiv){
 
   var y_axis = d3.axisLeft()
     .scale(yscale)
-    .tickValues([200, 900, 1500])
+    .tickValues([300, 900, 1500])
     .tickFormat(function (d) {
       if(d > 0 ) return d
     })
@@ -293,7 +293,7 @@ function paint(nameDiv){
   let bol = [
       {id: "bigCircle",radio:1190},
       {id: "middleCircle",radio:700},
-      {id: "innerCircle",radio:144}
+      {id: "innerCircle",radio:230}
   ]
 
 
@@ -356,7 +356,7 @@ function paint(nameDiv){
       pulsingEffect(1, 1, 1000)
   }
   let arrows = [0,1,2,3,4,5,6,7]
-  let arrowsy1 = [22, 22, 100, 100,230, 230, 200, 200]
+  let arrowsy1 = [22, 22, 100, 100,230, 230, 185, 185]
   let iarrows = isvg.selectAll("line")
     .data(arrows)
     .enter()
