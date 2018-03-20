@@ -26,10 +26,12 @@
  function displayOptionsWallet(){
   if(document.getElementById("sub-wallet").style.display == "block"){
     document.getElementById("sub-wallet").style.display = "none";
+    // document.getElementById("trade").style.display = "block";
+    // document.getElementById("options-wallet").style.display = "block";
   }else{
     document.getElementById("sub-wallet").style.display = "block";
-    document.getElementById("trade").style.display = "none";
-    document.getElementById("options-wallet").style.display = "none";
+    // document.getElementById("trade").style.display = "none";
+    // document.getElementById("options-wallet").style.display = "none";
   }
 
  }
