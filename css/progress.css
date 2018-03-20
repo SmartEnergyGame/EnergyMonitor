@@ -179,3 +179,17 @@
   position: absolute;
   height: 150px;
 }
+
+.scale-values {
+	width: 730px;
+	height: 30px;
+	position: absolute;
+	margin-left: -560px;
+}
+
+.scale-values-actions {
+	width: 570px;
+	height: 30px;
+	position: absolute;
+	margin-left: -445px;
+}
