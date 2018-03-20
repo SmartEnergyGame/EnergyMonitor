@@ -12,21 +12,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="js/custom.js"></script>
-    <style>
-      .btn-link, a:hover, a:visited, a:link, a:active{
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      text-decoration-color: transparent;
-      }
-    </style>
   </head>
   <body>
     <div class="sidenav-left">
       <center>
         <a href="calendar.html" style="border-color:transparent"> <img  src="img/date0.png" alt="" class="img-logo">   </a>
         <br><br>
-        <div class="btn-link" style="background-color: #F1F1F1;">
+        <div class="btn-link" >
           <a href="index.html">Our Status</a>
         </div>
         <div class="btn-link" >
@@ -35,8 +27,8 @@
         <div class="btn-link">
           <a href="actions.html">My Actions</a>
         </div>
-        <div class="btn-link" style="background-color: #dadada">
-          <a href="#">My Wallet</a>
+        <div class="btn-link" id="active_button">
+          <a href="wallet.html">My Wallet</a>
         </div>
         <a href="credits.html" style="border-color:transparent">   <span  style="position:relative; top:30px;" class="glyphicon glyphicon-info-sign" ></span> </a>
       </center>
@@ -113,13 +105,13 @@
         <h2 class="tittle">Your Green Wallet</h2>
       </center>
       <div class="notif" style="display: inline; margin-left:100px;">
-        <img src="img/bubble_status.png" alt="" width="180px" heigh="180px" style="margin-top: -130px;"> 
+        <img src="img/bubble_status.png" alt="" width="180px" heigh="180px" style="margin-top: -130px;">
       </div>
       <div class="message-wallet" style="width:600px; display:inline-block; margin-top:30px">
         <p style="font-weight: bold; font-size: 20px;"> Energy Credits </p>
         <br>
         <p style="font-size: 20px;">
-          Congratulations, your community has an energy credit system that allows you to exchange your credits with your neighbors to help the community collaborate in reducing community wide energy usage. 
+          Congratulations, your community has an energy credit system that allows you to exchange your credits with your neighbors to help the community collaborate in reducing community wide energy usage.
         </p>
       </div>
       <center>
@@ -128,14 +120,15 @@
         </div>
         <p style=" margin-left: -120px; font-size:20px" id ="trade">
             Trade with others
-        </p> 
+        </p>
         <div style="margin-left:100px; margin-top:-20px">
-          <span style="display: inline; " id="options-wallet" class="glyphicon glyphicon-option-horizontal glyphicon-index" onclick="displayOptionsWallet()"></span> 
+          <span style="display: inline; " id="options-wallet" class="glyphicon glyphicon-option-horizontal glyphicon-index" onclick="displayOptionsWallet()"></span>
         </div>
         <div id="sub-wallet" style="display:none; margin-top: 20px">
             <img src="img/wallet2.png" alt="" width="800px">
         </div>
       </center>
     </div>
+    <link rel="stylesheet" href="css/custom-links.css">
   </body>
 </html>

@@ -25,18 +25,18 @@
   <body>
     <div class="sidenav-left">
       <center>
-        <a href="calendar.html" style="border-color:transparent"> <img src="img/date0.png" alt="" class="img-logo">   </a>
+        <a href="calendar.html" style="border-color:transparent"> <img  src="img/date0.png" alt="" class="img-logo">   </a>
         <br><br>
-        <div class="btn-link" style="background-color: #F1F1F1;">
+        <div class="btn-link" >
           <a href="index.html">Our Status</a>
         </div>
-        <div class="btn-link" style="background-color: #F1F1F1">
+        <div class="btn-link" >
           <a href="data.html">Our Community</a>
         </div>
-        <div class="btn-link"  style="background-color: #dadada">
-          <a href="#">My Actions</a>
+        <div class="btn-link" id="active_button">
+          <a href="actions.html">My Actions</a>
         </div>
-        <div class="btn-link">
+        <div class="btn-link" >
           <a href="wallet.html">My Wallet</a>
         </div>
         <a href="credits.html" style="border-color:transparent">   <span  style="position:relative; top:30px;" class="glyphicon glyphicon-info-sign" ></span> </a>
@@ -122,7 +122,7 @@
         </map>
       </div>
       <div class="right-div-actions" style="float:right; margin-right: -30px;">
-        
+
         <div id="opt_one_actions">
           <div class="meter" style="height: 150px;   width: 550px;">
             <div class='meter-bar green' style="width: 60%;height: 150px;" data-tooltip='This month’s aggregated energy consumption by the community.'>
@@ -157,7 +157,7 @@
                 <div class='meter-bar gray' style="width: 5%;height: 60px;">
                   <div style="margin-top: 10px">
                     <p class="sub-txt-gray-number ">
-                      
+
                       </p>
                   </div>
                   <!-- <p class="kWh2">kWh -->
@@ -178,7 +178,7 @@
                   <div style="margin-top: 10px">
                     <p class="sub-txt-gray-number ">
                       <!-- 21,000  -->
-                      
+
                     </p>
                   </div>
                   <!-- <p class="kWh2">kWh -->
@@ -240,7 +240,7 @@
                     <input class="input_radio" type="radio" name="temperature_scale" onclick="changeImage()"  value="3"> Keep at 72 <br>
                 </div>
                 <div class="input_submit">
-                  <a href="actions.html"> Commit </a> 
+                  <a href="actions.html"> Commit </a>
                 </div>
              </div>
             </form>
@@ -248,5 +248,6 @@
 
       </div>
     </div>
+    <link rel="stylesheet" href="css/custom-links.css">
   </body>
 </html>

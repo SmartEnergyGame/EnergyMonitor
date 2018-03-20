@@ -1,7 +1,6 @@
 #container {
     margin-left: 380px;
 }
-
 .sidenav-left {
     height: 100%;
     width: 280px;
@@ -28,9 +27,11 @@
     position: relative;
 }
 
+
 .sidenav-left a {
     /*padding: 8px 8px 8px 32px;*/
     text-decoration: none;
+    text-decoration-color:  transparent;
     font-size: 20px;
     color: #000;
     display: block;
@@ -39,6 +40,7 @@
     border-color: #dadada;
     border-width: 1px;
 }
+
 
 .btn-link {
     border:1px solid black;
@@ -86,7 +88,7 @@
     font-size: 55px;
     cursor: pointer;
     margin-left:-220px;
-    
+
     color:gray;
 }
 
@@ -157,4 +159,15 @@
 .img_time{
   width:450px;
   height:150px;
+}
+
+
+.not_active_text {
+  font-weight: bold;
+}
+.active_text {
+  font-weight: bold;
+}
+#active_button {
+  background-color: #dadada;
 }
