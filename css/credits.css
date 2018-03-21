@@ -121,145 +121,53 @@ h2::after {
 /* stagger animation start times */
 /* keep a consistent "drip" speed */
 
-.directed h2::after {
-  /* --- The T in TRACHTENBERG --- */
-  content: "";
-  position: absolute;
-  border-left: .123rem solid white;
-  top: .191rem;
-  left: 2.05rem;
-  bottom: -11.32rem;
-  animation-name: directedT;
-  animation-duration: 6s;
-  animation-delay: 2s;
-}
 
 @keyframes directedT {
   from {bottom: .191rem;}
   to {bottom: -11.32rem;}
 }
 
-.screenplay h2:first-of-type::after {
-  /* --- The B in CAMPBELL --- */
-  content: "";
-  position: absolute;
-  border-left: .122rem solid white;
-  top: .124rem;
-  left: 4.388rem;
-  bottom: -.75rem;
-  animation-name: screenplayB;
-  animation-duration: 1.7s; /* KEEP CONSTANT */
-  animation-delay: 6s;
-}
 
 @keyframes screenplayB {
   from {bottom: .19rem;}
   to {bottom: -.82rem;}
 }
 
-.screenplay h2:nth-of-type(2)::after {
-  /* --- The T in STUECKEN --- */
-  content: "";
-  position: absolute;
-  border-left: .117rem solid white;
-  top: 0.18rem;
-  left: 3.47rem;
-  bottom: -.822rem;
-  animation-name: screenplayT;
-  animation-duration: 1.7s; /* KEEP CONSTANT */
-  animation-delay: 6.6s;
-}
+
 
 @keyframes screenplayT {
   from {bottom: .18rem;}
   to {bottom: -.822rem;}
 }
 
-.screenplay h2:last-of-type::after {
-  /* --- The I in DAMIEN --- */
-  content: "";
-  position: absolute;
-  border-left: .12rem solid white;
-  top: .111rem;
-  left: 2.75rem;
-  bottom: -11.324rem;
-  animation-name: screenplayI;
-  animation-duration: 6s;
-  animation-delay: 8.4s;
-}
+
 
 @keyframes screenplayI {
   from {bottom: .18rem;}
   to {bottom: -11.324rem;}
 }
 
-.story h2:first-of-type::after {
-  /* --- The E in CAMPBELL --- */
-  content: "";
-  position: absolute;
-  border-left: .109rem solid white;
-  top: .114rem;
-  left: 4.8rem;
-  bottom: -.815rem;
-  animation-name: storyE;
-  animation-duration: 1.7s; /* KEEP CONSTANT */
-  animation-delay: 12.6s;
-}
+
 
 @keyframes storyE {
   from {bottom: .18rem;}
   to {bottom: -.815rem;}
 }
 
-.story h2:last-of-type::after {
-  /* --- The T in MATT --- */
-  content: "";
-  position: absolute;
-  border-left: .123rem solid white;
-  top: .18rem;
-  left: 2.47rem;
-  bottom: -11.31rem;
-  animation-name: storyT;
-  animation-duration: 6s;
-  animation-delay: 14.3s;
-}
+
 
 @keyframes storyT {
   from {bottom: .18rem;}
   to {bottom: -11.33rem;}
 }
 
-.produced h2:first-of-type::after {
-  /* --- The R in ABRAMS --- */
-  content: "";
-  position: absolute;
-  border-left: .121rem solid white;
-  top: .114rem;
-  left: 2.98rem;
-  bottom: -.808rem;
-  animation-name: producedR;
-  animation-duration: 1.7s; /* KEEP CONSTANT */
-  animation-delay: 18.9s;
-}
 
 @keyframes producedR {
   from {bottom: .18rem;}
   to {bottom: -.808rem;}
 }
 
-.produced h2:last-of-type::after {
-  /* --- The I in LINDSEY --- */
-  content: "";
-  position: absolute;
-  border-left: .111rem solid white;
-  top: .12rem;
-  left: 1.11rem;
-  bottom: -5.5rem;
-  animation-name: producedI;
-  animation-duration: 4s;
-  animation-delay: 20.5s;
-  animation-timing-function: ease-in;
-}
+
 
 @keyframes producedI {
   from {bottom: .18rem;}
