@@ -194,3 +194,11 @@
 	margin-left: -445px;
 	margin-top: 3px;
 }
+
+.scale-values-subprogress{
+	width: 490px;
+	height: 30px;
+	position: absolute;
+	margin-left: -55px;
+	margin-top: 3px;
+}
